@@ -1,0 +1,13 @@
+/run/initialize
+
+/gps/source/intensity 2.7
+/gps/particle ion
+/gps/ion 92 238 0
+/gps/pos/type Volume
+/gps/pos/shape Para
+/gps/pos/centre 0 0 -107500 m
+/gps/pos/halfx 500000 m
+/gps/pos/halfy 500000 m
+/gps/pos/halfz 17500 m
+/gps/energy 0 eV
+/gps/ang/type iso

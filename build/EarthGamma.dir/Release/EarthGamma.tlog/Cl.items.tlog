@@ -1,0 +1,9 @@
+C:\Geant4\geoaxion\EarthGamma.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\EarthGamma.obj
+C:\Geant4\geoaxion\src\ActionInitialization.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\ActionInitialization.obj
+C:\Geant4\geoaxion\src\DetectorConstruction.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\DetectorConstruction.obj
+C:\Geant4\geoaxion\src\EventAction.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\EventAction.obj
+C:\Geant4\geoaxion\src\PhysicsList.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\PhysicsList.obj
+C:\Geant4\geoaxion\src\PrimaryGeneratorAction.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\PrimaryGeneratorAction.obj
+C:\Geant4\geoaxion\src\RunAction.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\RunAction.obj
+C:\Geant4\geoaxion\src\SensitiveDetector.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\SensitiveDetector.obj
+C:\Geant4\geoaxion\src\SteppingAction.cc;C:\Geant4\geoaxion\build\EarthGamma.dir\Release\SteppingAction.obj

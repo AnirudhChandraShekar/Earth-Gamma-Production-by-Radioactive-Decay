@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Geant4/geoaxion/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,3 @@
+C:/Geant4/geoaxion/build/CMakeFiles/EarthGamma.dir
+C:/Geant4/geoaxion/build/CMakeFiles/ALL_BUILD.dir
+C:/Geant4/geoaxion/build/CMakeFiles/ZERO_CHECK.dir

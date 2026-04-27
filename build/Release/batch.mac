@@ -1,0 +1,14 @@
+# batch.mac
+# Run this in batch mode for large production runs:
+#   EarthGamma.exe batch.mac
+#
+# No visualisation, maximum performance.
+
+/run/numberOfThreads 4      # Set to number of CPU cores available
+/run/initialize
+
+# Load the GPS source configuration from run.mac
+/control/execute run.mac
+
+# Override the beamOn for a full production run
+/run/beamOn 100000

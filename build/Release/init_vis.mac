@@ -1,0 +1,42 @@
+# init_vis.mac
+# Loaded automatically in interactive mode.
+# Shows the geometry before any run is started.
+
+/run/initialize
+
+/vis/open
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+# Draw geometry
+/vis/drawVolume
+
+# Camera angle — looking at the slab from the side
+/vis/viewer/set/viewpointThetaPhi 90 180
+/vis/viewer/set/lightsVector -1 0 0
+
+# Wireframe so you can see all layers
+/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge true
+
+# Trajectories coloured by particle type
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsSize 2
+
+# Colour gammas yellow, electrons red, positrons blue
+/vis/modeling/trajectories/drawByParticleID-0/set gamma yellow
+/vis/modeling/trajectories/drawByParticleID-0/set e- red
+/vis/modeling/trajectories/drawByParticleID-0/set e+ blue
+
+# Accumulate tracks across events
+/vis/scene/endOfEventAction accumulate
+
+# Axes
+/vis/scene/add/axes
+/vis/scene/add/scale
+/vis/scene/add/date
+
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings

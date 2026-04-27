@@ -1,0 +1,10 @@
+^C:\GEANT4\GEOAXION\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Geant4/geoaxion -BC:/Geant4/geoaxion/build --check-stamp-file C:/Geant4/geoaxion/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

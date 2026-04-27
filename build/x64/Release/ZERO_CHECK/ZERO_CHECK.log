@@ -1,0 +1,9 @@
+﻿  1>Checking Build System
+  CMake is re-running because C:/Geant4/geoaxion/build/CMakeFiles/generate.stamp is out-of-date.
+    the file 'C:/Geant4/geoaxion/run.mac'
+    is newer than 'C:/Geant4/geoaxion/build/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+  -- Configuring done (0.0s)
+  -- Generating done (0.1s)
+  -- Build files have been written to: C:/Geant4/geoaxion/build

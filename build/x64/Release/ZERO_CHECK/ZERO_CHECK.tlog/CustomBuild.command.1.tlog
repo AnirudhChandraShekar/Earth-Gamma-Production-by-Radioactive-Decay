@@ -1,0 +1,10 @@
+^C:\GEANT4\GEOAXION\BUILD\CMAKEFILES\1FD1EA506E1E06C17594A474D6D7530C\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Geant4/geoaxion -BC:/Geant4/geoaxion/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Geant4/geoaxion/build/EarthGamma.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

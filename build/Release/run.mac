@@ -1,0 +1,124 @@
+# run.mac
+# Main simulation macro for EarthGamma.
+#
+# Configures three GPS sources representing U238, Th232, and K40
+# in the crust and mantle, weighted by typical crustal abundances.
+#
+# Typical crustal abundances (ppm by mass):
+#   U238  ~2.7 ppm  (crust)  ~0.02 ppm (mantle)
+#   Th232 ~9.6 ppm  (crust)  ~0.08 ppm (mantle)
+#   K40   ~2.1% K total, K40 is 0.012% of natural K
+#         K in crust ~23000 ppm -> K40 ~2.76 ppm
+#
+# TODO: Replace intensity weights with values from your abundance model.
+
+/run/initialize
+
+# Critical: without this, Geant4 skips decays with half life > 1 year
+# which would prevent U238, Th232 and K40 from decaying at all
+/process/had/rdm/thresholdForVeryLongDecayTime 1e30 year
+
+# ============================================================
+# Source 1: U238 in the CRUST
+# ============================================================
+/gps/source/intensity 1.0
+
+/gps/particle ion
+/gps/ion 92 238 0          # Z=92 (Uranium), A=238, charge=0
+
+# Distribute uniformly throughout the crust volume
+/gps/pos/type Volume
+/gps/pos/shape Para
+/gps/pos/centre 0 0 92500 m      # Centre of crust slab
+/gps/pos/halfx 500000 m
+/gps/pos/halfy 500000 m
+/gps/pos/halfz 17500 m           # Half the crust thickness (35km/2)
+
+# Ions start at rest — Geant4 radioactive decay handles the energy
+/gps/energy 0 eV
+
+# Isotropic decay (radioactive decay is isotropic by definition)
+/gps/ang/type iso
+
+# ============================================================
+# Source 2: Th232 in the CRUST
+# ============================================================
+/gps/source/add 1.0
+
+/gps/particle ion
+/gps/ion 90 232 0          # Z=90 (Thorium), A=232, charge=0
+
+/gps/pos/type Volume
+/gps/pos/shape Para
+/gps/pos/centre 0 0 92500 m
+/gps/pos/halfx 500000 m
+/gps/pos/halfy 500000 m
+/gps/pos/halfz 17500 m
+
+/gps/energy 0 eV
+/gps/ang/type iso
+
+# ============================================================
+# Source 3: K40 in the CRUST
+# ============================================================
+/gps/source/add 1.0
+
+/gps/particle ion
+/gps/ion 19 40 0           # Z=19 (Potassium), A=40, charge=0
+
+/gps/pos/type Volume
+/gps/pos/shape Para
+/gps/pos/centre 0 0 92500 m
+/gps/pos/halfx 500000 m
+/gps/pos/halfy 500000 m
+/gps/pos/halfz 17500 m
+
+/gps/energy 0 eV
+/gps/ang/type iso
+
+# ============================================================
+# Source 4: U238 in the MANTLE (lower abundance)
+# ============================================================
+/gps/source/add 1.0
+
+/gps/particle ion
+/gps/ion 92 238 0
+
+/gps/pos/type Volume
+/gps/pos/shape Para
+/gps/pos/centre 0 0 -25000 m     # Centre of mantle slab
+/gps/pos/halfx 500000 m
+/gps/pos/halfy 500000 m
+/gps/pos/halfz 100000 m          # Half the mantle thickness (200km/2)
+
+/gps/energy 0 eV
+/gps/ang/type iso
+
+# ============================================================
+# Source 5: Th232 in the MANTLE
+# ============================================================
+/gps/source/add 1.0
+
+/gps/particle ion
+/gps/ion 90 232 0
+
+/gps/pos/type Volume
+/gps/pos/shape Para
+/gps/pos/centre 0 0 -25000 m
+/gps/pos/halfx 500000 m
+/gps/pos/halfy 500000 m
+/gps/pos/halfz 100000 m
+
+/gps/energy 0 eV
+/gps/ang/type iso
+
+# ============================================================
+# Run settings
+# ============================================================
+/run/verbose 1
+/tracking/verbose 0          # Set to 1 to see individual track steps (very verbose)
+/run/printProgress 1000
+
+# Start with a small number of events to verify decay chains are working
+# Then increase to 100000+ for statistics
+/run/beamOn 100
